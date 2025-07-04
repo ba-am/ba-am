@@ -1,0 +1,37 @@
+<svg width="700" height="50" viewBox="0 0 700 50"
+     xmlns="http://www.w3.org/2000/svg"
+     style="overflow:hidden; --text-w: 1230px;">
+  <defs>
+    <!-- Define the text once -->
+    <text id="scroll-text"
+          y="32"
+          font-family="JetBrains Mono, monospace"
+          font-size="20"
+          fill="#2E86AB">
+      Penetration Testing  •  Vulnerability Research  •  Digital Forensics  •  Threat Hunting  •  Ethical Hacking  •   
+    </text>
+  </defs>
+
+  <!-- Two copies inside a group that animates via CSS transform -->
+  <g class="scrolling-group">
+    <use href="#scroll-text" />
+    <use href="#scroll-text" />
+  </g>
+
+  <style><![CDATA[
+    .scrolling-group {
+      transform-box: fill-box;
+      transform-origin: 0 0;
+      animation: scroll 14s linear infinite;
+    }
+    /* Offset the second copy by the full text width */
+    .scrolling-group use:nth-of-type(2) {
+      transform: translateX(var(--text-w));
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(calc(-1 * var(--text-w))); }
+    }
+  ]]></style>
+</svg>
